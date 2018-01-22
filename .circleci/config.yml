@@ -17,8 +17,7 @@ jobs:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
           
           -run:
-          command:chmod +x deploy.sh
-          
+          command:chmod +x deploy.sh          
            - run:
           name: Run Tests
           command: ./gradlew lint test
