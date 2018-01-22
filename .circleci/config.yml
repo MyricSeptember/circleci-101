@@ -9,19 +9,15 @@ jobs:
       
       general:
       artifacts:
-          - /home/ubuntu/unideal-android/app/build/outputs/apk/
-      
+          - /home/ubuntu/unideal-android/app/build/outputs/apk/      
     steps:
       - checkout
       - restore_cache:
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
-     
-     
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}    
       - save_cache:
           paths:
             - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
-   
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}   
       - store_artifacts:
           path: app/build/reports
           destination: reports
