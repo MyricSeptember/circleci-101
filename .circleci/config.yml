@@ -16,6 +16,7 @@ jobs:
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
      
+     
       - save_cache:
           paths:
             - ~/.gradle
@@ -26,3 +27,9 @@ jobs:
           destination: reports
       - store_test_results:
           path: app/build/test-results
+- run:
+          name: chmod permissions
+          command: chmod +x ./gradlew
+    - run:
+          name: Run Tests
+          command: ./gradlew build
