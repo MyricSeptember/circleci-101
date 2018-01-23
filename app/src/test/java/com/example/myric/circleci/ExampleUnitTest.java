@@ -15,6 +15,12 @@ public class ExampleUnitTest {
 
     @Test
     public void emailValidator_CorrectEmailSimple_ReturnsTrue() {
+        assertThat(EmailValidator.isValidEmail("name@email.com"), is(true));
+    }
+
+    @Test
+    public void emailValidator_WrongEmailSimple_ReturnsFalse() {
+        //Removed the @ sign to make test fail
         assertThat(EmailValidator.isValidEmail("nameemail.com"), is(true));
     }
 
