@@ -15,7 +15,7 @@ public class ExampleUnitTest {
 
     @Test
     public void emailValidator_CorrectEmailSimple_ReturnsTrue() {
-        assertThat(EmailValidator.isValidEmail("nameemail.com"), is(true));
+        assertThat(EmailValidator.isValidEmail("name@email.com"), is(true));
     }
 
 }
