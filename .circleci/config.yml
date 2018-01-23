@@ -29,5 +29,8 @@ jobs:
       - store_artifacts:
           path: app/build/reports
           destination: reports
+          - store_artifacts:
+          path:  app/build/outputs
+          destination: outputs
       - store_test_results:
           path: app/build/test-results
